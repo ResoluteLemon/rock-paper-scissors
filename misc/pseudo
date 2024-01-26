@@ -1,0 +1,13 @@
+Project Requirements:
+- The game is played against a computer.
+- Computer randomly chooses between rock, paper, and scissors.
+- The game contains a function (eg. playRound) that takes 2 parameters: playerSelection and computerSelection, and return string that declares winner of the round like so: "You Lose! Paper beats Rock".
+- Player input for playerSelection() should be case-insensitive.
+- If there is a tie/draw, the round is re-played.
+- The main function that plays the round (eg. playRound) should return the results of the function call, not just simply console.log them. 
+- Game contains a function called game(), which calls the playRound() function to play a best-of-five game.
+- Game keeps the score
+- Game reports winner or loser at the end of the rounds. 
+
+
+
