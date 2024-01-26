@@ -9,5 +9,42 @@ Project Requirements:
 - Game keeps the score
 - Game reports winner or loser at the end of the rounds. 
 
+<!-- 
+#Pseudocode First iteration
+Variables required:
+ - score (number)
+ - choices (object, with 3 keys: rock,paper,scissors => corresponding to 3 values of 1, 2, and 3 respectively)
+ - computer choice (number: corresponds to one of the choices)
+ - player choice (number: corresponds to one of the choices)
+ - game state, win/lose (boolean)
+ - round state, win/lose/tie (boolean?)
+ - number of rounds (number)
+ - outcome text feedback (string: report status of round or game - if game over)
+
+Functions required:
+ - game()
+ - playRound()
+ 
+
+Pseudocode for the Game algorithm:
+Start the game
+Create choices object that has 3 key/value pairs: rock and 0, paper and 1, scissors and 2
+Create variable for computer choice
+Create variable for player choice
+Create variable for score and initiate it to 0 -->
+
+Pseudocode Second Iteration
+Update state
+Render state
+Play game
+    Get player selection
+    Get computer selection
+    Determine outcome
+Update state
+Render state
+
+
+
+
 
 
