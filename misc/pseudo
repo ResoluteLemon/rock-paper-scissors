@@ -54,9 +54,28 @@ Function: Play game
             #ELSE continue loop
     Function: Play round
         Function: Get player selection
+            Use prompt to get player input
         Function: Get computer selection
         Function: Compute outcome
     
+
+<!-- Pseudocode Third Iteration
+Const choices: create object to represent choices and give them indices
+    rock: 0
+    paper: 1
+    scissors: 2
+Const outcomes: create object to represent game outcomes
+    tie: 0
+    lose: 1
+    win: 2
+Function: Play game
+    Function: Initialize state
+        Const numRounds: set number of rounds to 5
+        Const score: set score to 0
+        Const computerSelection: set computer choice to 0
+        Const playerSelection: set player choice to 0 -->
+
+
 
 
 
