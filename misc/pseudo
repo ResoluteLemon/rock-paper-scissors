@@ -34,26 +34,29 @@ Create variable for player choice
 Create variable for score and initiate it to 0 -->
 
 Pseudocode Second Iteration
-Function: Update state (creating the initial state)
-    - score
-    - choices
-    - computer choice
-    - player choice
-    - game win/lose
-    - round win/lose/tie
-    - number of rounds
-Function: Render state
-    - Function: Display selections for both sides
-    - Function: Display round outcome
-    - Function: Display score
-    - Function: Display rounds remaining
-    - Function: Display game outcome (win/lose)
 Function: Play game
-    Function: Get player selection
-    Function: Get computer selection
-    Function: Compute outcome
-Function: Update state
-Render state
+    #LOOP
+    Function: Update state (creating the initial state)
+        - score
+        - choices
+        - computer choice
+        - player choice
+        - game win/lose
+        - round win/lose/tie
+        - number of rounds
+    Function: Render state
+        - Function: Display selections for both sides
+        - Function: Display round outcome
+        - Function: Display score
+        - Function: Display rounds remaining
+        - Function: Display game outcome (win/lose)
+            #IF game outcome = win, then #END LOOP
+            #ELSE continue loop
+    Function: Play round
+        Function: Get player selection
+        Function: Get computer selection
+        Function: Compute outcome
+    
 
 
 
