@@ -24,7 +24,7 @@ Variables required:
 Functions required:
  - game()
  - playRound()
- 
+
 
 Pseudocode for the Game algorithm:
 Start the game
@@ -34,13 +34,25 @@ Create variable for player choice
 Create variable for score and initiate it to 0 -->
 
 Pseudocode Second Iteration
-Update state
-Render state
-Play game
-    Get player selection
-    Get computer selection
-    Determine outcome
-Update state
+Function: Update state (creating the initial state)
+    - score
+    - choices
+    - computer choice
+    - player choice
+    - game win/lose
+    - round win/lose/tie
+    - number of rounds
+Function: Render state
+    - Function: Display selections for both sides
+    - Function: Display round outcome
+    - Function: Display score
+    - Function: Display rounds remaining
+    - Function: Display game outcome (win/lose)
+Function: Play game
+    Function: Get player selection
+    Function: Get computer selection
+    Function: Compute outcome
+Function: Update state
 Render state
 
 
