@@ -36,10 +36,10 @@ function playerFeedback(outcomeText, playerSelection, computerSelection, state) 
             alert(`It is a tie. We'll go again. ${renderGameStats(state)}`);
             break;
         case 'victory':
-            alert(`You win the game! ${choices[playerSelection]} beats ${choices[computerSelection]} ${renderGameStats(state)}`);
+            alert(`You win the game! ${renderGameStats(state)}`);
             break;
         case 'defeat':
-            alert(`You lose the game! ${choices[computerSelection]} beats ${choices[playerSelection]} ${renderGameStats(state)}`);
+            alert(`You lose the game! ${renderGameStats(state)}`);
             break;
     }
 }
@@ -80,13 +80,6 @@ function playRound(state) {
 }
 
 
-const state = {
-    playerScore: 0,
-    computerScore: 0,
-    currentRound: 1,
-    maxRounds: 5
-}
-playRound(state);
 
 function game(maxRounds) {
     //initiate state
@@ -94,14 +87,10 @@ function game(maxRounds) {
         playerScore: 0,
         computerScore: 0,
         currentRound: 1,
-        maxRounds: 0
+        maxRounds: maxRounds
     }
-    //play round
-    //if tie, play around again
-    //if !tie, update score and increment round
-    //if currentRound >= rounds, end game
-    //return game win/lose outcome
+    playRound(state);
 }
 
-
+game(5);
 
