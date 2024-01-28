@@ -22,26 +22,38 @@ function calculateOutcome(playerSelection, computerSelection) {
     return outcomeText;
 }
 
-function playerFeedback(outcomeText) {
+function playerFeedback(outcomeText, playerSelection, computerSelection, state) {
     //this function could handle DOM manipulation, alerts, or console logs, whichever is needed
     //might take the state as an argument if needed in the future
     switch (outcomeText) {
         case 'win':
-            alert('You win the round!');
+            alert(`You win the round!
+            ${renderGameStats(state, playerSelection, computerSelection)}`);
             break;
         case 'lose':
-            alert('You lose the round!');
+            alert(`You lose the round!
+            ${renderGameStats(state, playerSelection, computerSelection)}`);
             break;
         case 'tie':
-            alert('It is a tie.');
+            alert(`It is a tie.
+            ${renderGameStats(state, playerSelection, computerSelection)}`);
             break;
         case 'victory':
-            alert('You win the game!');
+            alert(`You win the game!
+            ${renderGameStats(state, playerSelection, computerSelection)}`);
             break;
         case 'defeat':
-            alert('You lose the game!');
+            alert(`You lose the game!
+            ${renderGameStats(state, playerSelection, computerSelection)}`);
             break;
     }
+}
+
+function renderGameStats (state, playerSelection, computerSelection) {
+    return `${choices[playerSelection]} beats ${choices[computerSelection]}
+    Round: ${state.round} of ${state.maxRounds}
+    Player Score: ${state.playerScore}
+    Computer Score: ${state.computerScore}`;
 }
 
 function playRound(state) {
