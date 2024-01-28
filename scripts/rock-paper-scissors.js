@@ -22,8 +22,26 @@ function calculateOutcome(playerSelection, computerSelection) {
     return outcomeText;
 }
 
-function playerFeedback() {
-    
+function playerFeedback(outcomeText) {
+    //this function could handle DOM manipulation, alerts, or console logs, whichever is needed
+    //might take the state as an argument if needed in the future
+    switch (outcomeText) {
+        case 'win':
+            alert('You win the round!');
+            break;
+        case 'lose':
+            alert('You lose the round!');
+            break;
+        case 'tie':
+            alert('It is a tie.');
+            break;
+        case 'victory':
+            alert('You win the game!');
+            break;
+        case 'defeat':
+            alert('You lose the game!');
+            break;
+    }
 }
 
 function playRound(state) {
