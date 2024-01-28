@@ -1,5 +1,4 @@
 const choices = ['rock', 'paper', 'scissors'];
-
 const outcomes = ['tie', 'lose', 'win'];
 
 function getComputerChoice() {
@@ -8,32 +7,53 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     const input = prompt('Choose rock, paper, or scissors.').toLowerCase();
-    const index = choices.findIndex(choice => choice === input);
-    return index === -1 ? 
+    const choicesIndex = choices.findIndex(choice => choice === input);
+    return choicesIndex === -1 ? 
         (alert('Invalid Choice. Please re-enter'), getPlayerChoice()) 
-        : index;
-}
-
-function playRound(getPlayerChoice, getComputerChoice) {
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    const outcome = calculateOutcome(playerSelection, computerSelection);
-    logRoundStats(playerSelection, computerSelection, outcome);
+        : choicesIndex;
 }
 
 function calculateOutcome(playerSelection, computerSelection) {
     const selectionDifference = computerSelection - playerSelection;
-    const outcomesValue = selectionDifference > 0 ? 
+    const outcomesIndex = selectionDifference > 0 ? 
         selectionDifference % 3 : 
         (selectionDifference+3) % 3;
-    return outcomes[outcomesValue];
+    const outcomeText = outcomes[outcomesIndex];
+    return outcomeText;
+}
+
+function playerFeedback() {
+    
+}
+
+function playRound(state) {
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    const outcomeText = calculateOutcome(playerSelection, computerSelection);
+    //to remove
+    logRoundStats(playerSelection, computerSelection, outcomeText);
+}
+
+function game(maxRounds) {
+    //initiate state
+    const state = {
+        playerScore: 0,
+        computerScore: 0,
+        currentRound: 1,
+        maxRounds: 0
+    }
+    //play round
+    //if tie, play around again
+    //if !tie, update score and increment round
+    //if currentRound >= rounds, end game
+    //return game win/lose outcome
 }
 
 //to remove
-function logRoundStats(playerSelection, computerSelection, outcome) {
-    console.log(`player chose ${playerSelection}`);
-    console.log(`computer chose ${computerSelection}`);
-    console.log(outcome);
+function logRoundStats(playerSelection, computerSelection, outcomeText) {
+    console.log(`player chose ${choices[playerSelection]}`);
+    console.log(`computer chose ${choices[computerSelection]}`);
+    console.log(`You ${outcomeText}`);
 }
 
 // playRound(getPlayerChoice, getComputerChoice);
