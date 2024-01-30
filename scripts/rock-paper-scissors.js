@@ -51,7 +51,7 @@ function renderGameStats (state) {
     Computer Score: ${state.computerScore}`;
 }
 
-function resolveGameWinner(state, playerSelection, computerSelection) {
+function resolveGame(state, playerSelection, computerSelection) {
     return state.playerScore > state.computerScore ? 
     playerFeedback('victory', playerSelection, computerSelection, state) : playerFeedback('defeat', playerSelection, computerSelection, state);
 }
@@ -66,7 +66,7 @@ function playRound(state) {
         playerFeedback(outcomeText,playerSelection,computerSelection,state);
         return state.currentRound < state.maxRounds ? 
             (state.currentRound++, playRound(state)) : 
-            resolveGameWinner(state, playerSelection, computerSelection);
+            resolveGame(state, playerSelection, computerSelection);
     } else if (outcomeText === 'tie') {
         playerFeedback(outcomeText,playerSelection,computerSelection,state);
         return playRound(state);
@@ -75,11 +75,9 @@ function playRound(state) {
         playerFeedback(outcomeText,playerSelection,computerSelection,state);
         return state.currentRound < state.maxRounds ? 
             (state.currentRound++, playRound(state)) : 
-            resolveGameWinner(state, playerSelection, computerSelection);
+            resolveGame(state, playerSelection, computerSelection);
     }
 }
-
-
 
 function game(maxRounds) {
     //initiate state
