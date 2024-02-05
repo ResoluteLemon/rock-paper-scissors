@@ -1,0 +1,7 @@
+body {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0;
+    padding: 0;
+}
