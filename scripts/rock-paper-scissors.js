@@ -1,5 +1,15 @@
 const choices = ['rock', 'paper', 'scissors'];
 const outcomes = ['tie', 'lose', 'win'];
+const state = {
+    playerScore: 0,
+    computerScore: 0,
+    currentRound: 1,
+    maxRounds: maxRounds
+}
+const statsDisplay = document.querySelector('.cont-stats');
+const buttonRock = document.querySelector('.btn-rock');
+const buttonPaper = document.querySelector('.btn-paper');
+const buttonScissors = document.querySelector('.btn-scissors');
 
 function getComputerChoice() {
     return Math.floor(Math.random()*3);
@@ -79,16 +89,16 @@ function playRound(state) {
     }
 }
 
-function game(maxRounds) {
-    //initiate state
-    const state = {
-        playerScore: 0,
-        computerScore: 0,
-        currentRound: 1,
-        maxRounds: maxRounds
-    }
-    playRound(state);
-}
+// function game(maxRounds) {
+//     //initiate state
+//     const state = {
+//         playerScore: 0,
+//         computerScore: 0,
+//         currentRound: 1,
+//         maxRounds: maxRounds
+//     }
+//     playRound(state);
+// }
 
 // game(5);
 
