@@ -90,5 +90,5 @@ function game(maxRounds) {
     playRound(state);
 }
 
-game(5);
+// game(5);
 
